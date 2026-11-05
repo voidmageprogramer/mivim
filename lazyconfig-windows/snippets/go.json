@@ -1,0 +1,189 @@
+{
+  "Go: main": {
+    "prefix": "gmain",
+    "body": [
+      "func main() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "func main() function"
+  },
+  "Go: function": {
+    "prefix": "gfunc",
+    "body": [
+      "func ${1:name}() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Generic function declaration"
+  },
+  "Go: if err != nil": {
+    "prefix": "gerr",
+    "body": [
+      "if err != nil {",
+      "\treturn err",
+      "}"
+    ],
+    "description": "Standard error check"
+  },
+  "Go: if": {
+    "prefix": "gif",
+    "body": [
+      "if ${1:cond} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Simple if statement"
+  },
+  "Go: for (while)": {
+    "prefix": "gwhile",
+    "body": [
+      "for ${1:cond} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "for with condition (while)"
+  },
+  "Go: if else": {
+    "prefix": "gifelse",
+    "body": [
+      "if ${1:cond} {",
+      "\t$0",
+      "} else {",
+      "\t${2:/* ... */}",
+      "}"
+    ],
+    "description": "if / else statement"
+  },
+  "Go: else": {
+    "prefix": "gelse",
+    "body": [
+      "else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "else block"
+  },
+  "Go: switch": {
+    "prefix": "gswitch",
+    "body": [
+      "switch ${1:x} {",
+      "\tcase ${2:val}:",
+      "\t\t$0",
+      "}"
+    ],
+    "description": "switch statement"
+  },
+  "Go: case": {
+    "prefix": "gcase",
+    "body": "case ${1:val}:",
+    "description": "case inside switch"
+  },
+  "Go: printf": {
+    "prefix": "gprintf",
+    "body": "fmt.Printf(\"${1:%v}\\n\", ${2:...})",
+    "description": "fmt.Printf (printf de C)"
+  },
+  "Go: scan": {
+    "prefix": "gscanf",
+    "body": "fmt.Scan(&${1:val})",
+    "description": "fmt.Scan (scanf de C)"
+  },
+  "Go: for range": {
+    "prefix": "gfor",
+    "body": [
+      "for i, v := range ${1:items} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "for range loop"
+  },
+  "Go: classic for": {
+    "prefix": "gfori",
+    "body": [
+      "for i := 0; i < ${1:n}; i++ {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Classic three-part for loop"
+  },
+  "Go: struct": {
+    "prefix": "gstruct",
+    "body": [
+      "type ${1:Name} struct {",
+      "\t${2:Field} ${3:Type}",
+      "}"
+    ],
+    "description": "Struct type declaration"
+  },
+  "Go: interface": {
+    "prefix": "ginterface",
+    "body": [
+      "type ${1:Name} interface {",
+      "\t${2:Method}()",
+      "}"
+    ],
+    "description": "Interface type declaration"
+  },
+  "Go: goroutine": {
+    "prefix": "ggo",
+    "body": [
+      "go func() {",
+      "\t$0",
+      "}()"
+    ],
+    "description": "Anonymous goroutine"
+  },
+  "Go: defer": {
+    "prefix": "gdefer",
+    "body": "defer $0",
+    "description": "defer statement"
+  },
+  "Go: http handler": {
+    "prefix": "ghandler",
+    "body": [
+      "http.HandleFunc(\"${1:/}\", func(w http.ResponseWriter, r *http.Request) {",
+      "\t$0",
+      "})"
+    ],
+    "description": "http.HandleFunc handler"
+  },
+  "Go: http server": {
+    "prefix": "gserver",
+    "body": "http.ListenAndServe(\"${1::8080}\", nil)",
+    "description": "Start HTTP server"
+  },
+  "Go: channel": {
+    "prefix": "gchan",
+    "body": "ch := make(chan ${1:Type}, ${2:10})",
+    "description": "Channel declaration"
+  },
+  "Go: mutex": {
+    "prefix": "gmutex",
+    "body": "var mu sync.Mutex",
+    "description": "sync.Mutex declaration"
+  },
+  "Go: test": {
+    "prefix": "gtest",
+    "body": [
+      "func Test${1:Name}(t *testing.T) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Test function"
+  },
+  "Go: benchmark": {
+    "prefix": "gbench",
+    "body": [
+      "func Benchmark${1:Name}(b *testing.B) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Benchmark function"
+  },
+  "Go: json.Marshal": {
+    "prefix": "gjson",
+    "body": "json.Marshal(${1:v})",
+    "description": "json.Marshal call"
+  }
+}

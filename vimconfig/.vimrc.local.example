@@ -1,0 +1,68 @@
+" ~/.vimrc.local - Personalizaciones locales (NO versionar este archivo)
+" Copia este archivo a ~/.vimrc.local y edita tus preferencias
+
+" ============ LÍDER PERSONAL ============
+" let mapleader = ","        " Cambiar leader a coma (default: \)
+" let maplocalleader = "\\"  " Cambiar localleader
+
+" ============ TEMA/COLORSHEME ============
+" colorscheme gruvbox        " Ejemplo: descomenta para usar gruvbox
+" set background=dark        " dark o light
+" set termguicolors          " Colores verdaderos (requiere terminal compatible)
+
+" ============ FUENTES/NERD FONTS ============
+" let g:nerdfonts = 1        " Habilitar iconos Nerd Font
+" let g:airline_powerline_fonts = 1  " Para airline
+
+" ============ INDENTACIÓN POR TIPO DE ARCHIVO ============
+" autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+" autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+" autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
+
+" ============ LSP/COC CONFIGURACIÓN PERSONAL ============
+" let g:coc_global_extensions = [
+"   \ 'coc-json',
+"   \ 'coc-python',
+"   \ 'coc-tsserver',
+"   \ 'coc-eslint',
+"   \ 'coc-prettier',
+"   \ 'coc-git',
+"   \ 'coc-yaml',
+"   \ 'coc-html',
+"   \ 'coc-css',
+"   \ ]
+
+" ============ FZF CONFIGURACIÓN ============
+" let g:fzf_layout = { 'down': '~40%' }
+" let g:fzf_preview_window = 'right:50%:hidden'
+
+" ============ ATAJOS PERSONALES ============
+" nnoremap <leader>w :w<CR>           " Guardar rápido
+" nnoremap <leader>q :q<CR>           " Salir rápido
+" nnoremap <leader>h :nohlsearch<CR>  " Limpiar búsqueda
+
+" ============ OPCIONES ADICIONALES ============
+" set relativenumber           " Números relativos
+" set cursorline               " Resaltar línea actual
+" set colorcolumn=80           " Columna guía a 80 caracteres
+" set spelllang=es,en          " Diccionario español+inglés
+" set clipboard=unnamedplus    " Portapapeles del sistema
+
+" ============ PLUGINS ADICIONALES ============
+" call plug#begin('~/.vim/plugged')
+"   Plug 'tpope/vim-fugitive'        " Git
+"   Plug 'airblade/vim-gitgutter'    " Git diff en gutter
+"   Plug 'preservim/nerdtree'        " Explorador de archivos
+"   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"   Plug 'junegunn/fzf.vim'
+" call plug#end()
+
+" ============ FUNCIONES PERSONALES ============
+" function! ToggleRelativeNumber()
+"   if &relativenumber
+"     set norelativenumber
+"   else
+"     set relativenumber
+"   endif
+" endfunction
+" nnoremap <leader>rn :call ToggleRelativeNumber()<CR>
